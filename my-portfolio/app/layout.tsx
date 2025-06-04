@@ -1,10 +1,9 @@
-// app/layout.tsx
 import './globals.css';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'My Portfolio',
-  description: 'A dark-themed portfolio site',
+  title: 'Soham Sarpotdar Portfolio',
+  description: 'Enterprise grade UI portfolio site',
 };
 
 export default function RootLayout({
@@ -14,28 +13,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white">
-        <header className="p-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold">My Portfolio</h1>
-          <nav>
-            <Link href="/" className="mx-2">
-              Home
-            </Link>
-            <Link href="/about" className="mx-2">
-              About
-            </Link>
-            <Link href="/projects" className="mx-2">
-              Projects
-            </Link>
-            <Link href="/contact" className="mx-2">
-              Contact
-            </Link>
+      <body className="bg-black text-white min-h-screen flex flex-col">
+        <header className="p-6 bg-gray-900 flex justify-between items-center shadow-md">
+          <h1 className="text-2xl font-bold">Soham Sarpotdar</h1>
+          <nav className="space-x-4">
+            <Link href="/" className="hover:underline">Home</Link>
+            <Link href="/about" className="hover:underline">About</Link>
+            <Link href="/projects" className="hover:underline">Projects</Link>
+            <Link href="/contact" className="hover:underline">Contact</Link>
           </nav>
         </header>
-        <main>{children}</main>
-        <footer className="p-4 text-center">
-          © {new Date().getFullYear()} My Portfolio. All rights reserved.
-        </footer>
+        <main className="flex-grow">{children}</main>
+        <footer className="p-4 text-center bg-gray-900">© {new Date().getFullYear()} Soham Sarpotdar</footer>
       </body>
     </html>
   );
